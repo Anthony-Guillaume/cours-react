@@ -9,7 +9,7 @@ export class List extends React.Component
 
     render()
     {
-        return(
+        return (
             <div className="container">
                 <ul>
                     <li> L1 </li>
