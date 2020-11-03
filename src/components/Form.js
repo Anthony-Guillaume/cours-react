@@ -10,13 +10,14 @@ export class Form extends React.Component
 
     handleChange = (e) => {
     e.preventDefault();
-    const value = e.currentTarget.value
+    const value = e.currentTarget.value;
     this.setState({value});
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        alert("Formulaire envoyé : " + this.state.value);
+        // alert("Formulaire envoyé : " + this.state.value);
+        this.props.handleSubmitValue(this.state.value);
         const value = ""
         this.setState({value});
     }
@@ -24,9 +25,9 @@ export class Form extends React.Component
     render() 
     {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}> 
                 <label> Nom : </label>
-                <input 
+                <input
                     type="text" 
                     value={this.state.value} 
                     onChange={this.handleChange} 

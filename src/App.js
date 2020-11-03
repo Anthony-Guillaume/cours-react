@@ -4,19 +4,48 @@ import {List} from "./components/List";
 import {Button} from "./components/Button";
 import {Form} from "./components/Form";
 
-function App() 
+class App extends React.Component
 {
-  const list = <List elements={[1,2,3, 3]} />;
-  const form = <Form placeholder={"Votre nom."} disabled={false}/>;
-  const button = <Button value="Cliquez !"/>;
+  constructor()
+  {
+    super();
+    this.state = {elements: ["1","2","3"]};
+  }
 
-  return (
-    <div className="App">
-      {list}
-      {button}
-      {form}
-    </div>
-  );
+  addElement = (element) => {
+    const elements = Array.from(this.state.elements);
+    elements.push(element);
+    this.setState({elements});
+  }
+
+  removeElement = (element) => {
+    const indexOfElement = this.state.elements.indexOf(element)
+    if (indexOfElement !== -1)
+    {
+      const elements = Array.from(this.state.elements);
+      elements.splice(indexOfElement, 1);
+      this.setState({elements});
+    }
+  }
+
+  onFormSubmit = (inputValue) => {
+    this.addElement(inputValue);
+    console.log(inputValue);
+  }
+
+  render()
+  {
+    const list = <List elements={this.state.elements} />;
+    const form = <Form handleSubmitValue={this.onFormSubmit} placeholder={"Votre nom."} disabled={false}/>;
+    const button = <Button value="Cliquez !"/>;
+    return (
+        <div className="App">
+          {list}
+          {button}
+          {form}
+        </div>
+    );
+  }
 }
 
 export default App;
