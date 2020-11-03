@@ -4,7 +4,7 @@ export class List extends React.Component
 {
     render()
     {
-        const listRender = this.props.elements.map((element) =>  <li> {element}</li>);
+        const listRender = this.props.elements.map((element, index) =>  <li key={index}> {element}</li>);
         return (
             <div className="container">
                 <ul>
@@ -15,13 +15,13 @@ export class List extends React.Component
     }
 }
 
-export const ListHook = (elements) => {
-    const listElements = elements.map((element) =>  <li> {element}</li>);
-        return (
-            <div className="container">
-                <ul>
-                    {listElements}
-                </ul>
-            </div>
-        );
-;}
+// export const ListHook = (elements) => {
+//     const listElements = elements.map((element) =>  <li> {element}</li>);
+//         return (
+//             <div className="container">
+//                 <ul>
+//                     {listElements}
+//                 </ul>
+//             </div>
+//         );
+// ;}

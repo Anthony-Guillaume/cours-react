@@ -6,8 +6,8 @@ import {Form} from "./components/Form";
 
 function App() 
 {
-  const list = <List elements={[1,2,3]} />;
-  const form = <Form placeholder={"123-45-678"} disabled={false}/>;
+  const list = <List elements={[1,2,3, 3]} />;
+  const form = <Form placeholder={"Votre nom."} disabled={false}/>;
   const button = <Button value="Cliquez !"/>;
 
   return (
