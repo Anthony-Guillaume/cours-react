@@ -19,8 +19,9 @@ export class Form extends React.Component
         e.preventDefault();
         // alert("Formulaire envoyé : " + this.state.value);
         this.props.handleSubmitValue(this.state.value);
+        const inputDisabled = true;
         const value = ""
-        this.setState({value});
+        this.setState({value, inputDisabled});
     }
 
     render() 
