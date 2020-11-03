@@ -4,12 +4,11 @@ export class List extends React.Component
 {
     render()
     {
+        const listRender = this.props.elements.map((element) =>  <li>{element}</li>);
         return (
             <div className="container">
                 <ul>
-                    <li> L1 </li>
-                    <li> L2 </li>
-                    <li> L3 </li>
+                    {listRender}
                 </ul>
             </div>
         );

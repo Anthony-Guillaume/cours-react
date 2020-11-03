@@ -7,16 +7,16 @@ export class Button extends React.Component
         super(props);
     }
 
-    count = 0;
+    // count = 0;
 
-    handleClick = () => {
-        this.count++;
-        console.log(this.count);
-      }
+    // handleClick = () => {
+    //     this.count++;
+    //     console.log(this.count);
+    //   }
     
-    getCount = () => {
-        return this.count;
-    };
+    // getCount = () => {
+    //     return this.count;
+    // };
 
     render()
     {
