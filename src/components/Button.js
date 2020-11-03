@@ -5,24 +5,20 @@ export class Button extends React.Component
     constructor(props)
     {
         super(props);
+        this.state = { count: 0, value: "Cliquez !"};
     }
 
-    // count = 0;
-
-    // handleClick = () => {
-    //     this.count++;
-    //     console.log(this.count);
-    //   }
-    
-    // getCount = () => {
-    //     return this.count;
-    // };
+    handleClick = () => {
+        this.setState( {count: this.state.count + 1, value: "Clique effectué !"});
+        console.log(this.state.count);
+      }
 
     render()
     {
         return (
-            // <button onClick={this.handleClick}> Cliquez ici </button>
-            <button type="button">{this.props.value}</button>
+            // <button onClick={this.handleClick}> {this.props.value} </button>
+            <button onClick={this.handleClick}> {this.state.value} </button>
+
         );
     }
 }
