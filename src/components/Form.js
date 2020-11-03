@@ -17,8 +17,12 @@ export class Form extends React.Component
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // alert("Formulaire envoyé : " + this.state.value);
+        alert("Formulaire envoyé : " + this.state.value);
         this.props.handleSubmitValue(this.state.value);
+        this.resetFormInput()
+    }
+
+    resetFormInput = () => {
         const inputDisabled = true;
         const value = ""
         this.setState({value, inputDisabled});
