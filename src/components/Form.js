@@ -15,7 +15,7 @@ export class Form extends React.Component
 
     handleSubmit = (e) => {
         e.preventDefault();
-        alert("Formulaire envoyé !");
+        alert("Formulaire envoyé : " + this.state.value);
         this.setState({value: ""});
     }
 
@@ -24,7 +24,9 @@ export class Form extends React.Component
         return (
             <form onSubmit={this.handleSubmit}>
                 <label> Nom : </label>
-                <input type="text" value={this.state.value} onChange={this.handleChange} /> 
+                <input type="text" value={this.state.value} onChange={this.handleChange} 
+                    name={this.props.name} placeholder={this.props.placeholder} disabled={this.props.disabled}
+                /> 
                 <input type="submit" value="Envoyer" />
             </form>
         );
