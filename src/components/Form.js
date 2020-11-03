@@ -5,13 +5,14 @@ export class Form extends React.Component
     constructor(props) 
     {
         super(props);
-        this.state = {value: ""};
+        this.state = {value: "", inputDisabled: true};
     }
 
     handleChange = (e) => {
-    e.preventDefault();
-    const value = e.currentTarget.value;
-    this.setState({value});
+        e.preventDefault();
+        const value = e.currentTarget.value;
+        const inputDisabled = (value === "");
+        this.setState({value, inputDisabled});
     }
 
     handleSubmit = (e) => {
@@ -35,7 +36,7 @@ export class Form extends React.Component
                     placeholder={this.props.placeholder} 
                     disabled={this.props.disabled}
                 />
-                <input type="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" disabled={this.state.inputDisabled}/>
             </form>
         );
     }

@@ -39,7 +39,7 @@ class App extends React.Component
     const form = <Form handleSubmitValue={this.onFormSubmit} placeholder={"Votre nom."} disabled={false}/>;
     const button = <Button value="Cliquez !"/>;
     return (
-        <div className="App">
+        <div className="App-header">
           {list}
           {button}
           {form}
