@@ -9,7 +9,8 @@ export class Button extends React.Component
     }
 
     handleClick = () => {
-        this.setState( {count: this.state.count + 1, value: "Clique effectué !"});
+        const newCount = this.state.count + 1;
+        this.setState( {count: newCount, value: "Clique effectué ! " + newCount});
         console.log(this.state.count);
       }
 
