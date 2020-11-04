@@ -4,24 +4,19 @@ export class List extends React.Component
 {
     render()
     {
-        const listRender = this.props.elements.map((element, index) =>  <li key={index}> {element}</li>);
+        const listRender = this.props.elements.map((element, index) =>  {
+            return(
+            <li
+                key={index}> {element} 
+                <button  onClick={(e) => this.props.onClick(element)}>  X  </button>
+            </li>)
+        });
         return (
             <div className="container">
                 <ul>
-                   {listRender}
+                   {listRender} 
                 </ul>
             </div>
         );
     }
 }
-
-// export const ListHook = (elements) => {
-//     const listElements = elements.map((element) =>  <li> {element}</li>);
-//         return (
-//             <div className="container">
-//                 <ul>
-//                     {listElements}
-//                 </ul>
-//             </div>
-//         );
-// ;}
